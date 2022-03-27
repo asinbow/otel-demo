@@ -4,6 +4,7 @@ buildscript {
     }
     dependencies {
         classpath(Plugins.protobuf.plugin)
+        classpath(Plugins.spring.boot.plugin)
     }
 }
 
