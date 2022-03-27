@@ -1,7 +1,11 @@
 package com.flexport.oteldemo.httpservice
 
-import com.flexport.oteldemo.utilities.CommonUtils
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
 
-fun main() {
-    println("hello ${CommonUtils.foo()}")
+@SpringBootApplication
+class App
+
+fun main(args: Array<String>) {
+    runApplication<App>(*args)
 }

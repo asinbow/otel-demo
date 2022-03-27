@@ -5,8 +5,6 @@ OpenTelemetry Demo
 * grpc-api
   * protobuf
 * http-service
-  * Spring integration
-  * Spring Web
   * gRPC client
 * grpc-service
   * Spring integration
