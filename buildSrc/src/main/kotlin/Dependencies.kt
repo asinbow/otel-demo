@@ -34,6 +34,7 @@ object Libs {
         const val protobuf = "io.grpc:grpc-protobuf:1.45.0"
         const val stub = "io.grpc:grpc-stub:1.45.0"
         const val kotlinStub = "io.grpc:grpc-kotlin-stub:1.2.1"
+        const val springBootStarter = "io.github.lognet:grpc-spring-boot-starter:4.6.0"
     }
 
     object jackson {

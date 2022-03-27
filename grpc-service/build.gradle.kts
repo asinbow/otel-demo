@@ -4,9 +4,11 @@ plugins {
 
 dependencies {
     implementation(project(":utilities"))
+    implementation(project(":grpc-api"))
 
     implementation(Libs.spring.boot.starter.starter)
-    implementation(Libs.jackson.module.kotlin)
+    implementation(Libs.grpc.springBootStarter)
+    implementation(Libs.grpc.kotlinStub)
     testImplementation(Libs.spring.boot.starter.test)
 }
 
