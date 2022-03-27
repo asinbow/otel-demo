@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "com.flexport.oteldemo.api";
+option java_outer_classname = "UserProto";
+option java_multiple_files = true;
+
+message User {
+    string id = 1;
+    string name = 2;
+    uint32 age = 3;
+}
