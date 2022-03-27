@@ -4,6 +4,10 @@ plugins {
 
 dependencies {
     implementation(project(":utilities"))
+
+    implementation(Libs.spring.boot.starter.starter)
+    implementation(Libs.jackson.module.kotlin)
+    testImplementation(Libs.spring.boot.starter.test)
 }
 
 application {

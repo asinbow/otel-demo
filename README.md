@@ -7,7 +7,6 @@ OpenTelemetry Demo
 * http-service
   * gRPC client
 * grpc-service
-  * Spring integration
   * gRPC service
 * Docker
   * docker build
