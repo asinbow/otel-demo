@@ -6,7 +6,10 @@ import com.flexport.oteldemo.api.UserApiGrpcKt.UserApiCoroutineStub
 import com.flexport.oteldemo.api.UserRequest
 import com.flexport.oteldemo.httpservice.dto.AddressDto
 import com.flexport.oteldemo.httpservice.dto.UserDto
+import io.opentelemetry.api.common.AttributeKey
+import io.opentelemetry.api.common.Attributes
 import io.opentelemetry.api.metrics.Meter
+import io.opentelemetry.api.trace.Span
 import io.opentelemetry.extension.annotations.SpanAttribute
 import io.opentelemetry.extension.annotations.WithSpan
 import mu.KotlinLogging
@@ -26,12 +29,17 @@ class UserController(
 
     @GetMapping(value = ["/{id}"])
     suspend fun getUser(@PathVariable("id") id: String): UserDto {
+        val span = Span.current()
+        span.setAttribute("id", id)
+        span.addEvent("getUser", Attributes.of(AttributeKey.stringKey("id"), id))
+
         val user = userApi.getUser(
             UserRequest.newBuilder().setId(id).build()
         ).user
 
         logger.info { "get user $user" }
         meter.counterBuilder("getUser").build().add(1)
+        span.addEvent("getAddresses")
 
         return UserDto(
             id = user.id,
