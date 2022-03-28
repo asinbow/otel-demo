@@ -9,8 +9,5 @@ docker-compose up
 
 ### TODO
 * opentelemetry
-  * instrumentation
-    * grpc-service
-    * http-service
-  * opentelemetry-collector-contrib
-    * YAML
+  * @WithSpan
+  * Use API

@@ -1,4 +1,11 @@
 FROM openjdk:11
 ARG JAR_FILE=build/libs/*.jar
+ARG OTEL_AGENT_JAR_FILE=opentelemetry-javaagent-1.12.1.jar
+
+ENV OTEL_AGENT_JAR_FILE=${OTEL_AGENT_JAR_FILE}
+
 COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY otel/build/libs/${OTEL_AGENT_JAR_FILE} .
+COPY otel/run-jvm .
+
+ENTRYPOINT [ "./run-jvm" ]

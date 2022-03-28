@@ -68,4 +68,9 @@ object Libs {
         const val version = "42.3.3"
         const val id = "org.postgresql:postgresql:$version"
     }
+
+    object openTelemetry {
+        const val version = "1.12.1"
+        const val javaAgent = "io.opentelemetry.javaagent:opentelemetry-javaagent:$version"
+    }
 }

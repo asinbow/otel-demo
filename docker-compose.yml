@@ -21,6 +21,9 @@ services:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317
+      - OTEL_SERVICE_NAME=oteldemo-grpc-service
+      - OTEL_RESOURCE_ATTRIBUTES=developer=hao-wang
     depends_on:
       - db
   http-service:
@@ -32,5 +35,13 @@ services:
       - SERVICE_PORT=80
       - GRPC_SERVICE_HOST=grpc-service
       - GRPC_SERVICE_PORT=50051
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317
+      - OTEL_SERVICE_NAME=oteldemo-http-service
+      - OTEL_RESOURCE_ATTRIBUTES=developer=hao-wang
     depends_on:
       - grpc-service
+  otel-collector:
+    container_name: otel-collector
+    image: oteldemo/otel-collector
+    # ports:
+    #   - "4317:4317"

@@ -11,3 +11,8 @@ build-docker() {
 
 build-docker http-service
 build-docker grpc-service
+
+docker build \
+  -t oteldemo/otel-collector \
+  -f otel/Dockerfile \
+  .

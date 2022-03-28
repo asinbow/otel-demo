@@ -1,0 +1,6 @@
+#!/bin/sh
+
+java \
+    -javaagent:${OTEL_AGENT_JAR_FILE} \
+    -jar \
+    app.jar
