@@ -8,5 +8,9 @@ docker-compose up
 ```
 
 ### TODO
-* opentelemetry-collector-contrib
-  * YAML
+* opentelemetry
+  * instrumentation
+    * grpc-service
+    * http-service
+  * opentelemetry-collector-contrib
+    * YAML
