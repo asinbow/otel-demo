@@ -31,6 +31,11 @@ service:
       receivers: [otlp]
       processors: [batch, resourcedetection]
       exporters: [datadog/api]
+    # metrics is not stable for Datadog yet
+    metrics:
+      receivers: [otlp]
+      processors: [batch, resourcedetection]
+      exporters: [datadog/api]
     # logs is not supported for Datadog yet
     # logs:
     #   receivers: [otlp]

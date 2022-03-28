@@ -6,6 +6,7 @@ import com.flexport.oteldemo.api.UserApiGrpcKt.UserApiCoroutineStub
 import com.flexport.oteldemo.api.UserRequest
 import com.flexport.oteldemo.httpservice.dto.AddressDto
 import com.flexport.oteldemo.httpservice.dto.UserDto
+import io.opentelemetry.api.metrics.Meter
 import io.opentelemetry.extension.annotations.SpanAttribute
 import io.opentelemetry.extension.annotations.WithSpan
 import mu.KotlinLogging
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController
 class UserController(
     private val userApi: UserApiCoroutineStub,
     private val addressApi: AddressApiCoroutineStub,
+    private val meter: Meter,
 ) {
     private val logger = KotlinLogging.logger {}
 
@@ -29,6 +31,7 @@ class UserController(
         ).user
 
         logger.info { "get user $user" }
+        meter.counterBuilder("getUser").build().add(1)
 
         return UserDto(
             id = user.id,

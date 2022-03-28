@@ -6,12 +6,15 @@ import com.flexport.oteldemo.api.UserRequest
 import com.flexport.oteldemo.api.UserResponse
 import com.flexport.oteldemo.grpcservice.model.UserDo
 import com.flexport.oteldemo.grpcservice.repository.UserRepository
+import io.opentelemetry.api.metrics.Meter
 import mu.KotlinLogging
 import org.lognet.springboot.grpc.GRpcService
 
+
 @GRpcService
 class UserApi(
-    private val userRepository: UserRepository
+    private val userRepository: UserRepository,
+    private val meter: Meter
 ) : UserApiCoroutineImplBase() {
     private val logger = KotlinLogging.logger {}
 
@@ -20,6 +23,7 @@ class UserApi(
         userRepository.save(user)
 
         logger.info { "created user $user" }
+        meter.counterBuilder("createUser").build().add(1)
 
         return UserResponse
             .newBuilder()

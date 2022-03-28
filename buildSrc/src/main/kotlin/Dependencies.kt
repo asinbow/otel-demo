@@ -75,11 +75,18 @@ object Libs {
         const val bom = "io.opentelemetry:opentelemetry-bom:$version"
         const val bomAlpha = "io.opentelemetry:opentelemetry-bom-alpha:1.12.0-alpha"
         const val extensionAnnotations = "io.opentelemetry:opentelemetry-extension-annotations"
-        object api {
-            const val id = "io.opentelemetry:opentelemetry-api"
+        const val api = "io.opentelemetry:opentelemetry-api"
+        object sdk {
+            const val trace = "io.opentelemetry:opentelemetry-sdk-trace"
+            const val metrics = "io.opentelemetry:opentelemetry-sdk-metrics"
+            const val logs = "io.opentelemetry:opentelemetry-sdk-logs"
         }
         object exporter {
-            const val otlp = "io.opentelemetry:opentelemetry-exporter-otlp"
+            object otlp {
+                const val id = "io.opentelemetry:opentelemetry-exporter-otlp"
+                const val metrics = "io.opentelemetry:opentelemetry-exporter-otlp-metrics"
+                const val logs = "io.opentelemetry:opentelemetry-exporter-otlp-logs"
+            }
         }
     }
 
