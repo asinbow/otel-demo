@@ -18,8 +18,12 @@ dependencies {
     implementation(Libs.grpc.netty.shaded)
 
     implementation(platform(Libs.openTelemetry.bom))
-    implementation(Libs.openTelemetry.api)
+    implementation(platform(Libs.openTelemetry.bomAlpha))
     implementation(Libs.openTelemetry.extensionAnnotations)
+    implementation(Libs.openTelemetry.api.id)
+    implementation(Libs.openTelemetry.exporter.otlp)
+
+    implementation(Libs.kotlinLogging.id)
 
     testImplementation(Libs.spring.boot.starter.test)
 }

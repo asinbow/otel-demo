@@ -12,9 +12,17 @@ dependencies {
     implementation(Libs.grpc.springBootStarter)
     implementation(Libs.grpc.kotlinStub)
 
+    implementation(platform(Libs.openTelemetry.bom))
+    implementation(platform(Libs.openTelemetry.bomAlpha))
+    implementation(Libs.openTelemetry.extensionAnnotations)
+    implementation(Libs.openTelemetry.api.id)
+    implementation(Libs.openTelemetry.exporter.otlp)
+
     runtimeOnly(Libs.postgres.id)
     runtimeOnly(Libs.javaxbApi)
     runtimeOnly(Libs.kotlin.reflect)
+
+    implementation(Libs.kotlinLogging.id)
 
     testImplementation(Libs.spring.boot.starter.test)
 }

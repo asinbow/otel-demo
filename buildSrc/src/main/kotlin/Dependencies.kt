@@ -73,7 +73,18 @@ object Libs {
         const val version = "1.12.0"
         const val javaAgent = "io.opentelemetry.javaagent:opentelemetry-javaagent:1.12.1"
         const val bom = "io.opentelemetry:opentelemetry-bom:$version"
-        const val api = "io.opentelemetry:opentelemetry-api"
+        const val bomAlpha = "io.opentelemetry:opentelemetry-bom-alpha:1.12.0-alpha"
         const val extensionAnnotations = "io.opentelemetry:opentelemetry-extension-annotations"
+        object api {
+            const val id = "io.opentelemetry:opentelemetry-api"
+        }
+        object exporter {
+            const val otlp = "io.opentelemetry:opentelemetry-exporter-otlp"
+        }
+    }
+
+    object kotlinLogging {
+        const val version = "2.1.21"
+        const val id = "io.github.microutils:kotlin-logging-jvm:$version"
     }
 }
