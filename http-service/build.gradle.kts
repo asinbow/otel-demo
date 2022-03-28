@@ -17,6 +17,10 @@ dependencies {
     implementation(Libs.grpc.kotlinStub)
     implementation(Libs.grpc.netty.shaded)
 
+    implementation(platform(Libs.openTelemetry.bom))
+    implementation(Libs.openTelemetry.api)
+    implementation(Libs.openTelemetry.extensionAnnotations)
+
     testImplementation(Libs.spring.boot.starter.test)
 }
 

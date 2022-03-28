@@ -70,7 +70,10 @@ object Libs {
     }
 
     object openTelemetry {
-        const val version = "1.12.1"
-        const val javaAgent = "io.opentelemetry.javaagent:opentelemetry-javaagent:$version"
+        const val version = "1.12.0"
+        const val javaAgent = "io.opentelemetry.javaagent:opentelemetry-javaagent:1.12.1"
+        const val bom = "io.opentelemetry:opentelemetry-bom:$version"
+        const val api = "io.opentelemetry:opentelemetry-api"
+        const val extensionAnnotations = "io.opentelemetry:opentelemetry-extension-annotations"
     }
 }
