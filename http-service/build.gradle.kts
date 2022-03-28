@@ -19,13 +19,14 @@ dependencies {
 
     implementation(platform(Libs.openTelemetry.bom))
     implementation(platform(Libs.openTelemetry.bomAlpha))
-    implementation(Libs.openTelemetry.extensionAnnotations)
     implementation(Libs.openTelemetry.api)
     implementation(Libs.openTelemetry.sdk.metrics)
     implementation(Libs.openTelemetry.sdk.logs)
     implementation(Libs.openTelemetry.exporter.otlp.id)
     implementation(Libs.openTelemetry.exporter.otlp.metrics)
     implementation(Libs.openTelemetry.exporter.otlp.logs)
+    implementation(Libs.openTelemetry.extension.annotations)
+    implementation(Libs.openTelemetry.extension.kotlin)
 
     implementation(Libs.kotlinLogging.id)
 
