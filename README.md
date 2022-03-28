@@ -8,7 +8,5 @@ docker-compose up
 ```
 
 ### TODO
-* grpc-service
-  * Spring JPA
 * opentelemetry-collector-contrib
   * YAML

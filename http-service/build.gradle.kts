@@ -9,7 +9,7 @@ dependencies {
     implementation(Libs.kotlin.coroutines.core)
     implementation(Libs.kotlin.coroutines.reactor)
 
-    implementation(Libs.spring.boot.starter.starter)
+    implementation(Libs.spring.boot.starter.id)
     implementation(Libs.spring.boot.starter.web)
     implementation(Libs.jackson.module.kotlin)
 

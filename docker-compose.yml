@@ -4,6 +4,8 @@ services:
   db:
     container_name: db
     image: postgres
+    # ports:
+    #   - "5432:5432"
     environment:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
@@ -11,10 +13,11 @@ services:
   grpc-service:
     container_name: grpc-service
     image: oteldemo/grpc-service
-    ports:
-      - "50051:50051"
+    # ports:
+    #   - "50051:50051"
     environment:
       - SERVICE_PORT=50051
+      - POSTGRES_HOST=db
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres

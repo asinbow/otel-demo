@@ -20,7 +20,10 @@ object Plugins {
 }
 
 object Libs {
+    const val javaxbApi = "javax.xml.bind:jaxb-api:2.3.1"
     object kotlin {
+        const val version = "1.6.10"
+        const val reflect = "org.jetbrains.kotlin:kotlin-reflect:$version"
         object coroutines {
             const val version = "1.6.0"
             const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
@@ -31,7 +34,8 @@ object Libs {
         object boot {
             object starter {
                 const val version = "2.6.5"
-                const val starter = "org.springframework.boot:spring-boot-starter:$version"
+                const val id = "org.springframework.boot:spring-boot-starter:$version"
+                const val dataJpa = "org.springframework.boot:spring-boot-starter-data-jpa:$version"
                 const val web = "org.springframework.boot:spring-boot-starter-web:$version"
                 const val test = "org.springframework.boot:spring-boot-starter-test:$version"
             }
@@ -55,7 +59,13 @@ object Libs {
 
     object jackson {
         object module {
-            const val kotlin = "com.fasterxml.jackson.module:jackson-module-kotlin:2.13.2"
+            const val version = "2.13.2"
+            const val kotlin = "com.fasterxml.jackson.module:jackson-module-kotlin:$version"
         }
+    }
+
+    object postgres {
+        const val version = "42.3.3"
+        const val id = "org.postgresql:postgresql:$version"
     }
 }
