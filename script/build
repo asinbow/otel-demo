@@ -1,0 +1,13 @@
+#!/bin/bash
+
+build-docker() {
+  service=$1
+  docker build \
+    --build-arg JAR_FILE=$service/build/libs/$service.jar \
+    -t oteldemo/$service \
+    -f otel/Dockerfile.jvm \
+    .
+}
+
+build-docker http-service
+build-docker grpc-service
