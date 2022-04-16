@@ -16,6 +16,8 @@ docker-compose up
 ```
 Open [http://localhost:8080/user/foo](http://localhost:8080/user/foo)
 
+![architecture](./docs/architecture.png)
+
 #### View traces in Datadog
 * Open services
   * [oteldemo-http-service](https://app.datadoghq.com/apm/service/oteldemo-http-service?env=dev)
